@@ -38,6 +38,4 @@ function getEmployees(items) {
 
 sortList(employeesList);
 
-const employees = getEmployees(employeesList);
-
-console.log(employees);
+getEmployees(employeesList);
