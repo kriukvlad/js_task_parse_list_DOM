@@ -3,12 +3,14 @@
 const employeesList = [...document.querySelectorAll('[data-position]')];
 
 function sortList(items) {
-  const sortedList = items.sort((a, b) => {
-    const salaryA = parseInt(a.dataset.salary.replace(/[$,]/g, ''), 10);
-    const salaryB = parseInt(b.dataset.salary.replace(/[$,]/g, ''), 10);
+  const sortedList = items
+    .filter((item) => item.dataset.salary)
+    .sort((a, b) => {
+      const salaryA = parseInt(a.dataset.salary.replace(/[$,]/g, ''), 10);
+      const salaryB = parseInt(b.dataset.salary.replace(/[$,]/g, ''), 10);
 
-    return salaryB - salaryA;
-  });
+      return salaryB - salaryA;
+    });
 
   const parentElem = items[0].parentElement;
 
